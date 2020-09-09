@@ -10,8 +10,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = "com.ceiba.tiendatecnologica")
 public class TiendaTecnologicaApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TiendaTecnologicaApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TiendaTecnologicaApplication.class, args);
+    }
 
 }

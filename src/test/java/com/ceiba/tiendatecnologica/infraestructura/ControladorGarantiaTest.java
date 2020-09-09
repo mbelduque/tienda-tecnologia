@@ -12,7 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -29,11 +28,10 @@ public class ControladorGarantiaTest {
     private ObjectMapper objectMapper;
 
     @Test
-    public void generarGarantiaProducto() throws Exception
-    {
-        ComandoProducto comandoProducto= new ProductoTestDataBuilder().buildComando();
-        mvc.perform( MockMvcRequestBuilders
-                .post("/garantia/{idProducto}/{nombreCliente}","CODIGO","CLIENTE")
+    public void generarGarantiaProducto() throws Exception {
+        ComandoProducto comandoProducto = new ProductoTestDataBuilder().buildComando();
+        mvc.perform(MockMvcRequestBuilders
+                .post("/garantia/{idProducto}/{nombreCliente}", "CODIGO", "CLIENTE")
                 .content(objectMapper.writeValueAsString(comandoProducto))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))

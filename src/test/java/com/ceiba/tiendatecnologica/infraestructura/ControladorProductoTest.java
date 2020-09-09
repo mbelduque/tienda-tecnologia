@@ -29,9 +29,8 @@ public class ControladorProductoTest {
     private ObjectMapper objectMapper;
 
     @Test
-    public void getProductoPorId() throws Exception
-    {
-        mvc.perform( MockMvcRequestBuilders
+    public void getProductoPorId() throws Exception {
+        mvc.perform(MockMvcRequestBuilders
                 .get("/productos/{id}", "PROD_001")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
@@ -40,10 +39,9 @@ public class ControladorProductoTest {
     }
 
     @Test
-    public void crearProducto() throws Exception
-    {
-        ComandoProducto comandoProducto= new ProductoTestDataBuilder().buildComando();
-        mvc.perform( MockMvcRequestBuilders
+    public void crearProducto() throws Exception {
+        ComandoProducto comandoProducto = new ProductoTestDataBuilder().buildComando();
+        mvc.perform(MockMvcRequestBuilders
                 .post("/productos")
                 .content(objectMapper.writeValueAsString(comandoProducto))
                 .contentType(MediaType.APPLICATION_JSON)
